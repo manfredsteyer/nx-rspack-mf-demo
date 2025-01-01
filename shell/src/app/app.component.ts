@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { AuthService } from '@rspack-demo/auth';
 
 @Component({
   imports: [RouterModule],
@@ -8,5 +9,10 @@ import { RouterModule } from '@angular/router';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = 'shell';
+
+  auth = inject(AuthService);
+
+  constructor() {
+    this.auth.userName.set('John Doe');
+  }
 }

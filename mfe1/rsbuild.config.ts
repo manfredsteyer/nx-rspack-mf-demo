@@ -20,7 +20,14 @@ export default createConfig({
         ...shareAll({
           singleton: true,
           strictVersion: true,
-        })
+        }),
+        '@rspack-demo/auth': {
+          singleton: true,
+          strictVersion: true,
+          version: '0.0.0',
+          requiredVersion: '0.0.0',
+          import: '../auth/src/index.ts'
+        }
       }
     }
   }
